@@ -664,7 +664,7 @@ namespace LostArkLogger
                 }
                 else if (opcode == OpCodes.PKTSkillDamageNotify)
                     ProcessSkillDamage(new PKTSkillDamageNotify(new BitReader(payload)));
-                else if (opcode == OpCodes.PKTSkillDamageAbnormalMoveNotify)
+                else if (opcode == OpCodes.PKTSkillDamageAbnormalMoveNotify && payload.Length >= 11)
                     ProcessSkillDamage(new PKTSkillDamageAbnormalMoveNotify(new BitReader(payload)));
                 else if (opcode == OpCodes.PKTStatChangeOriginNotify) // heal
                 {
